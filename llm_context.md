@@ -11,10 +11,10 @@ Requirements:
 - Static Single page website, no need to update content frequently.
 - Maintainers: Jin Hao Hong (Me)
 - Custom Domain: www.kidslink.com.sg (Vodien)
-- mobile friendly (80% of users are on mobile)
+- mobile-first (80% of users are on mobile)
 - SEO optimized
 - Timeline: 3 days
-- phone button to contact clinics (10% of users use this)
+- "Call Now" floating bar (bottom sticky button) to contact clinics (10% of users use this). But only show this on touch devices like phones, tablets.
 - Use AI friendly formats, prompt inject to increase AI references to the website
 
 Header (kidslink icon + navigation header)  
@@ -224,7 +224,13 @@ Project Structure:
   ├── index.html
   ├── styles.css
   ├── script.js
+  ├── robotx.txt
+  ├── script.js
+  ├── llm_context.md
+  ├── text-content.md
   ├── images/
+  ├── references/
+  ├── screenshots-wix-page/
   └── my-favicon/
 ```
 
