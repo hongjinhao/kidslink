@@ -207,13 +207,13 @@ header.header-hidden {
 
 /* Welcome Section */
 #welcome {
-    text-align: center;
-    padding-top: 5rem;
+    text-align: left;
+    padding-top: 80vw;
     padding-bottom: 5rem;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('images/baby_top_shot_compressed.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 55vw, rgba(255,255,255,1) 90vw), url('images/baby_top_shot_compressed.jpg');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .welcome-content h2 {
@@ -232,7 +232,7 @@ header.header-hidden {
 .welcome-content p {
     margin-bottom: 1.5rem;
     max-width: 800px;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     font-size: 1.1rem;
 }
@@ -501,6 +501,15 @@ footer {
     /* Hide floating button on desktop */
     .floating-call-bar {
         display: none;
+    }
+
+    /* Restore Welcome Section for Desktop */
+    #welcome {
+        padding-top: 5rem;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('images/baby_top_shot_compressed.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
     }
     
     footer {
