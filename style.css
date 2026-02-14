@@ -241,12 +241,12 @@ header.header-hidden {
 .team-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .team-member {
     background: #fff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     text-align: center;
@@ -369,17 +369,41 @@ header.header-hidden {
     color: #000000;
 }
 
+/* Opening Hours Header */
+.opening-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sun-img-wrapper img {
+    width: 210px;
+    height: auto;
+    display: block;
+}
+
+.opening-titles .section-title {
+    margin-bottom: 0.5rem;
+}
+
+.opening-titles .subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Contact Section */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .contact-card {
     background: #fff;
-    padding: 2rem;
+    padding: 0.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     text-align: center;
@@ -388,6 +412,7 @@ header.header-hidden {
 .contact-card h3 {
     color: var(--accent-blue);
     font-size: 1.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .contact-card a {
@@ -508,13 +533,51 @@ footer {
 }
 
 /* Desktop Styles */
-@media (min-width: 768px) {
+
+
+@media (min-width: 824px) {
+    .opening-header {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .opening-titles {
+        text-align: left;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hours-row {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1068px) {
     body {
         padding-bottom: 0;
     }
 
     .mobile-menu-btn {
         display: none;
+    }
+
+    .header-container {
+        justify-content: space-between;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    .logo {
+        position: static; /* Let it flow naturally */
+        transform: none;
+        left: auto;
+        margin-right: auto; /* Push everything else to the right, just in case */
     }
 
     .nav-links {
@@ -527,12 +590,13 @@ footer {
         height: auto;
         visibility: visible;
         opacity: 1;
-        justify-content: flex-start;
+        justify-content: flex-end; /* Align nav items to the right */
+        margin-left: auto; /* Push nav to the right */
     }
 
     .nav-links li {
         border-bottom: none;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         width: auto;
     }
     
@@ -541,8 +605,67 @@ footer {
     }
 
     .nav-links a {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         font-weight: 600;
+    }
+
+    .logo-image {
+        max-height: 80px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem; /* Increased gap */
+    }
+
+    .team-member {
+        padding: 2rem; /* Increased padding inside card */
+    }    .welcome-content h2 {
+        font-size: 3rem;
+    }
+
+    .welcome-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-content p {
+        font-size: 1.3rem;
+    }
+    
+    .team-member h3 {
+        font-size: 1.3rem;
+    }
+
+    .team-member h4 {
+        font-size: 1.2rem;
+    }
+    
+    .qualifications {
+        font-size: 1.2rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-card p, .contact-card a {
+        font-size: 1.2rem;
+    }
+
+    .opening-titles .subtitle {
+        font-size: 1.5rem;
+    } 
+
+    .hours-row {
+        font-size: 1.4rem;
+    }
+
+    .hours-row.header-row {
+        font-size: 1.4rem;
     }
 
     .team-grid {
@@ -551,6 +674,7 @@ footer {
     
     .contact-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem; /* Increased gap */
     }
     
     /* Hide floating button on desktop */
@@ -561,27 +685,23 @@ footer {
     /* Restore Welcome Section for Desktop */
     #welcome {
         padding-top: 5rem;
-        background-image: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('images/baby_top_shot_compressed.jpg');
+        background-image: linear-gradient(to right, rgba(255,255,255,0) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,1) 100%), url('images/baby_top_shot_compressed.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 80vh;
+    }
+
+    .welcome-content {
+        width: 50%;
+        margin-left: auto;
+        padding-left: 5rem;
     }
     
     footer {
         padding-bottom: 2rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .team-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .contact-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .hours-row {
-        font-size: 1rem;
     }
 }
