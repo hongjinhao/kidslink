@@ -556,6 +556,10 @@ footer {
     .hours-row {
         font-size: 1.2rem;
     }
+
+    .hours-notes {
+        font-size: 1.1rem;
+    }
 }
 
 @media (min-width: 1068px) {
@@ -666,6 +670,10 @@ footer {
 
     .hours-row.header-row {
         font-size: 1.4rem;
+    }
+
+    .hours-notes {
+        font-size: 1.3rem;
     }
 
     .team-grid {
