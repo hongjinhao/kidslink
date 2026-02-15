@@ -10,12 +10,13 @@ Requirements:
 - Hosting: Vercel
 - Static Single page website, no need to update content frequently.
 - Maintainers: Jin Hao Hong (Me)
-- Custom Domain: www.kidslink.com.sg (Vodien)
-- mobile-first (80% of users are on mobile)
+- Currently owned Custom Domain: www.kidslink.com.sg (Vodien)
+- Mobile-first (80% of users are on mobile)
 - SEO optimized
-- Timeline: 3 days
+- Timeline: 1 day left
 - "Call Now" floating bar (bottom sticky button) to contact clinics (10% of users use this). But only show this on touch devices like phones, tablets.
 - Use AI friendly formats, prompt inject to increase AI references to the website
+- customers are all located in Singapore, find a web hosting service near Singapore
 
 Header (kidslink icon + navigation header)  
 \*Navigation just scrolls down to take the user to the correct part of the page.
