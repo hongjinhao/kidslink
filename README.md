@@ -4,7 +4,7 @@ This repository hosts the custom-coded website for **Kidslink Children's Clinic*
 
 ## Project Overview
 
-This project represents a migration from a previous Wix-based site to a performant, custom solution. The primary goal is to provide a static, single-page experience that is identical to the original design but optimized for modern web standards.
+This project represents a migration from a previous Wix-based site to a performant, custom solution. The primary goal is to provide a static, single-page experience that is identical to the original design but optimized for modern web standards and reducing cost (Wix costs USD$230/year)
 
 - **Live URL**: [www.kidslink.com.sg](https://www.kidslink.com.sg)
 - **Maintainer**: Jin Hao Hong
@@ -12,7 +12,7 @@ This project represents a migration from a previous Wix-based site to a performa
 ## Tech Stack
 
 - **Core**: HTML5, CSS3, Vanilla JavaScript (No backend required)
-- **Hosting**: Vercel (Optimized for static site delivery)
+- **Hosting**: Vercel (Connected to Git; auto-deploys on every commit)
 - **Analytics**: Google Analytics 4, Vercel Analytics
 
 ## Key Features
@@ -43,3 +43,7 @@ kidslink/
 ## Private Business Use
 
 This code is proprietary and built specifically for the operations of Kidslink Children's Clinic.
+
+## TODO
+
+- Check email domain changes
