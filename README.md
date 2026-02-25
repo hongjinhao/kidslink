@@ -47,3 +47,8 @@ This code is proprietary and built specifically for the operations of Kidslink C
 ## TODO
 
 - Check email domain changes
+- performance improvements:
+  - convert images to webp format
+  - add preload for background images
+  - add width/height to images
+  - lazy-load fonts
