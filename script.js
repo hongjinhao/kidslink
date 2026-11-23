@@ -1,4 +1,45 @@
+// Send a GA4 event. Does nothing if gtag hasn't loaded (e.g. blocked by an ad blocker).
+function trackEvent(name, params) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", name, params);
+  }
+}
+
+// Clinic names by phone number, so every call event uses the same name
+// no matter which link was tapped.
+const CLINIC_BY_PHONE = {
+  "+6563100900": "Chua Chu Kang",
+  "+6562433243": "Bedok",
+  "+6565675600": "Jurong",
+  "+6563884466": "Sengkang",
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Analytics: phone link taps (contact section + floating call list)
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const phone = link.getAttribute("href").replace("tel:", "");
+      trackEvent("click_to_call", {
+        clinic: CLINIC_BY_PHONE[phone] || "unknown",
+        phone_number: phone,
+        link_location: link.closest("#clinic-list")
+          ? "floating_list"
+          : "contact_section",
+      });
+    });
+  });
+
+  // Analytics: header menu links and logo
+  document.querySelectorAll('header a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+      trackEvent("nav_click", {
+        section: href === "#" ? "top" : href.slice(1),
+        link_text: link.textContent.trim() || "logo",
+      });
+    });
+  });
+
   // Mobile Menu Toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
@@ -9,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenuBtn.classList.toggle("active");
       const isExpanded = navLinks.classList.contains("active");
       mobileMenuBtn.setAttribute("aria-expanded", isExpanded);
+      trackEvent("mobile_menu_toggle", {
+        menu_action: isExpanded ? "open" : "close",
+      });
 
       // Prevent scrolling when menu is open
       if (isExpanded) {
@@ -44,7 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
       clinicList.classList.toggle("hidden");
       const isHidden = clinicList.classList.contains("hidden");
       callBtn.setAttribute("aria-expanded", !isHidden);
-      
+      trackEvent("call_button_toggle", {
+        menu_action: isHidden ? "close" : "open",
+      });
+
       if (!isHidden) {
           callBtn.innerHTML = closeIcon;
       } else {
